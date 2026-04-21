@@ -1,0 +1,19 @@
+* {
+	font-family: sans-serif, arial;
+	margin:0px;
+	padding:0px;
+	box-sizing:border-box;
+	color:white;
+}
+a {
+	text-decoration:none;
+}
+:target {
+	display:block!important;
+}
+.container {
+	width:100%;
+	max-width: 1300px;
+	margin: 0px auto;
+	padding:0px 10px;
+}
