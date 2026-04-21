@@ -1,21 +1,23 @@
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
-import ChooseUs from './home/ChooseUs'
-import FeaturedProduct from './home/FeaturedProduct'
 import Footer from './home/Footer'
 import Header from './home/Header'
-import Hero from './home/Hero'
-import ShopByCategory from './home/shopByCategory'
-import Testimonial from './home/Testimonial'
+import Home from './pages/Home'
+import Shop from './pages/Shop'
+import Login from './pages/Login'
+
 
 function App() {
   return (
     <>
       <Header />
-      <Hero />
-      <ShopByCategory />
-      <FeaturedProduct />
-      <ChooseUs />
-      <Testimonial />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/shop" element={<Shop />} />
+        <Route path="/categories" element={<Shop />} />
+        <Route path="/my-account" element={<Shop />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
       <Footer />
     </>
   )
