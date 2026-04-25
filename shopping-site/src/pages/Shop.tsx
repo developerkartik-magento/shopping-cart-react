@@ -26,7 +26,7 @@ const Shop = () => {
             <p className="price">₹{product.price}</p>
 
             <Link to={`/product/${product.id}`}>
-              <button>View Details</button>
+              <button>Add to Cart</button>
             </Link>
 
           </div>

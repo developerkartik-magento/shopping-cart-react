@@ -5,6 +5,7 @@ import Header from './home/Header'
 import Home from './pages/Home'
 import Shop from './pages/Shop'
 import Login from './pages/Login'
+import Dashboard from './pages/Dashboard'
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/categories" element={<Shop />} />
         <Route path="/my-account" element={<Shop />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
       <Footer />
     </>
