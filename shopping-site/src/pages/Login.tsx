@@ -21,14 +21,25 @@ const Login = () => {
 
       if (data.token) {
         localStorage.setItem('userToken', data.token);
+        localStorage.setItem('accountUsername', username);
+        localStorage.setItem('accountPassword', password);
 
         const usersResponse = await fetch('https://fakestoreapi.com/users');
         const users = await usersResponse.json();
         const user = users.find((u: any) => u.username === username);
 
-        if (user?.name) {
-          localStorage.setItem('firstName', user.name.firstname);
-          localStorage.setItem('lastName', user.name.lastname);
+        if (user) {
+          localStorage.setItem('firstName', user.name?.firstname || '');
+          localStorage.setItem('lastName', user.name?.lastname || '');
+          localStorage.setItem('email', user.email || '');
+          localStorage.setItem('user', JSON.stringify(user));
+          localStorage.setItem('accountEmail', user.email || '');
+        } else {
+          localStorage.setItem('firstName', '');
+          localStorage.setItem('lastName', '');
+          localStorage.setItem('email', '');
+          localStorage.setItem('user', JSON.stringify({ username, password }));
+          localStorage.setItem('accountEmail', '');
         }
 
         alert('Login successful!');
